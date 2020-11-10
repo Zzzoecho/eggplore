@@ -1,5 +1,41 @@
 $--color-white: #fff !default;
-$--color-primary: #6979F8 !default;
-$--color-primary-lighter: #a5affb !default;
+$--color-primary: #6979f8 !default;
 
-$--color-primary-light-1: mix($--color-white, $--color-primary, 79%) !default;
+$--color-primary-lighter: mix($--color-white, $--color-primary, 40%) !default;
+$--color-primary-lightest: mix($--color-white, $--color-primary, 80%) !default;
+
+$--color-magenta: #BE52F2 !default;
+$--color-magenta-lighter: mix($--color-white, $--color-magenta, 40%) !default;
+$--color-magenta-lightest: mix($--color-white, $--color-magenta, 80%) !default;
+
+// ----- 语义化颜色 ----- //
+$--color-amber: #FFCF5C !default;
+$--color-amber-lighter: mix($--color-white, $--color-amber, 40%) !default;
+$--color-amber-lightest: mix($--color-white, $--color-amber, 80%) !default;
+
+$--color-orange: #FFA26B !default;
+$--color-orange-lighter: mix($--color-white, $--color-orange, 40%) !default;
+$--color-orange-lightest: mix($--color-white, $--color-orange, 80%) !default;
+
+$--color-blue: #0084F4 !default;
+$--color-blue-lighter: mix($--color-white, $--color-blue, 40%) !default;
+$--color-blue-lightest: mix($--color-white, $--color-blue, 80%) !default;
+
+$--color-green: #00C48C !default;
+$--color-green-lighter: mix($--color-white, $--color-green, 40%) !default;
+$--color-green-lightest: mix($--color-white, $--color-green, 80%) !default;
+
+$--color-coral: #FF647C !default;
+$--color-coral-lighter: mix($--color-white, $--color-coral, 40%) !default;
+$--color-coral-lightest: mix($--color-white, $--color-coral, 80%) !default;
+
+// ----- 文字 ----- //
+$--color-text-primary: #1A051D !default;
+$--color-text-regular: #3F3356 !default;
+$--color-text-secondary: #D0C9D6 !default;
+$--color-text-placeholder: #ECE9F1 !default;
+$--color-text-placeholder: #F7F5F9 !default;
+
+// ----- 渐变 ----- //
+$--color-gradient: linear-gradient(225deg, #BD7AE3 0%, #8461C9 100%) !default;;
+$--color-gradient-lighter: linear-gradient(225deg, #CDDDF4 0%, #CDBAFA 100%) !default;;
