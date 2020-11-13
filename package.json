@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --hot --open --config webpack.config.js",
+    "dev": "webpack-dev-server --watch --config webpack.config.js",
     "build": "webpack"
   },
   "devDependencies": {
@@ -22,6 +22,13 @@
     "node-sass": "^5.0.0",
     "prettier": "^2.1.2",
     "sass-loader": "^10.0.5",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recess-order": "^2.3.0",
+    "stylelint-config-standard-scss": "^1.1.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
     "vue-loader": "^15.9.5",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.12",

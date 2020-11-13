@@ -1,8 +1,13 @@
-import Vue from "vue";
-import App from "./App.vue";
+import Button from '../packages/Button/index';
 
+const install = function (Vue) {
+  Vue.components(Button.name, Button);
+};
 
-new Vue({
-    el: '#app',
-    render: h => h(App)
-})
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue);
+}
+
+export default {
+  install,
+};
