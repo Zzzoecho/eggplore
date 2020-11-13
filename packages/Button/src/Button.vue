@@ -12,32 +12,26 @@
 </template>
 
 <script>
-const EggButtonType = ['primary', 'secondary', 'hollow', 'text']
-const EggButtonSize = ['medium', 'small', 'mini']
-const EggButtonSemantic = ['', 'success', 'warning', 'info', 'danger']
+const EggButtonType = ['primary', 'secondary', 'hollow', 'text'];
+const EggButtonSize = ['medium', 'small', 'mini'];
+const EggButtonSemantic = ['', 'success', 'warning', 'info', 'danger'];
 
 export default {
   name: 'EggButton',
   props: {
     size: {
       type: String,
-      validator: (val) => {
-        return EggButtonSize.includes(val)
-      },
+      validator: (val) => EggButtonSize.includes(val),
     },
     // 不同层级的按钮
     type: {
       type: String,
       default: 'hollow',
-      validator: (val) => {
-        return EggButtonType.includes(val)
-      },
+      validator: (val) => EggButtonType.includes(val),
     },
     semantic: {
       type: String,
-      validator: (val) => {
-        return EggButtonSemantic.includes(val)
-      },
+      validator: (val) => EggButtonSemantic.includes(val),
     },
     disabled: {
       type: Boolean,
@@ -47,21 +41,25 @@ export default {
       type: String,
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
 .egg-button {
-  padding: 11px 74px;
+  box-sizing: border-box;
   display: inline-block;
-  border-radius: 6px;
-  border: 1px solid #6979f8;
-  font-size: 17px;
+  padding: 12px 70px;
   font-family: Helvetica;
-  letter-spacing: 2px;
-  color: $--color-primary;
+  font-size: 17px;
+  font-weight: 400;
   line-height: 22px;
+  color: $--color-primary;
+  text-align: center;
+  letter-spacing: 0.5px;
   cursor: pointer;
+  border: 1px solid #6979f8;
+  border-radius: 6px;
+  transition: all 200ms;
 
   // size
   &.egg-button--medium {
@@ -81,24 +79,32 @@ export default {
   &.egg-button--primary {
     color: $--color-white;
     background-color: $--color-primary;
+
+    &:hover {
+      background-color: $--color-primary-light-1;
+      border-color: $--color-primary-light-1;
+    }
   }
   &.egg-button--hollow {
-    border-width: 2px;
     background-color: $--color-white;
+    border-width: 2px;
+
+    &:hover {
+      background-color: $--color-primary-light-9;
+    }
   }
   &.egg-button--secondary {
+    background-color: $--color-primary-light-8;
     border: none;
-    background-color: $--color-primary-lightest;
+
+    &:hover {
+      background-color: $--color-primary-light-7;
+    }
   }
   &.egg-button--text {
-    border: none;
+    padding: 12px 0;
     background-color: unset;
+    border: none;
   }
-
-  &.egg-button--secondary {
-  }
-}
-
-@mixin eggButtonSize($size) {
 }
 </style>
