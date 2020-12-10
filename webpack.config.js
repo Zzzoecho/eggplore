@@ -19,7 +19,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@packages': path.resolve(__dirname, 'packages'),
     },
   },
   module: {
@@ -37,7 +37,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              additionalData: '@import "@/assets/styles/variables.scss";@import "@/assets/styles/reset.scss";',
+              additionalData: '@import "@packages/assets/styles/variables.scss";@import "@packages/assets/styles/reset.scss";',
             },
           },
         ],
