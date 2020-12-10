@@ -45,6 +45,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/styles/variables.scss";
+
 .egg-button {
   box-sizing: border-box;
   display: inline-block;

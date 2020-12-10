@@ -36,8 +36,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../src/assets/styles/variables';
-
 #app {
   padding: 20px;
   .panel {
