@@ -2,8 +2,18 @@ const path = require('path');
 
 module.exports = () => {
   return {
-    title: 'Hello Eggplore',
-    description: 'UI',
+    title: 'Eggplore UI',
+    description: '练手的UI库',
+    themeConfig: {
+      sidebar: [
+        {
+          title: 'Basic',
+          children: ['/basic/button']
+        }
+      ],
+      displayAllHeaders: true,
+    },
+    plugins: ['demo-container'],
     configureWebpack: {
       resolve: {
         alias: {
@@ -16,17 +26,5 @@ module.exports = () => {
         additionalData: '@import "@packages/assets/styles/variables.scss";@import "@packages/assets/styles/reset.scss";',
       },
     },
-    plugins: [
-      '@vuepress/register-components',
-      {
-        componentsDir: '../../packages',
-        components: [
-          {
-            name: 'egg-button',
-            path: '../../packages/Button/src/Button',
-          },
-        ],
-      },
-    ],
   };
 };
