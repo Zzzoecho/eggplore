@@ -27,8 +27,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 .egg-row {
   display: flex;
+  margin-bottom: 20px;
 }
 </style>

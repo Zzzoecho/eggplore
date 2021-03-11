@@ -46,22 +46,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/styles/variables.scss";
+@import '../../assets/styles/variables.scss';
 
 .egg-button {
-  padding: 8px 20px;
   box-sizing: border-box;
   display: inline-block;
   flex: none;
+  padding: 8px 20px;
   font-size: 16px;
   font-weight: 400;
   color: $--color-primary;
   text-align: center;
   letter-spacing: 0.5px;
+  cursor: pointer;
   border: 2px solid #6979f8;
   border-radius: 6px;
   transition: all 200ms;
-  cursor: pointer;
+
+  & + .egg-button {
+    margin-left: 10px;
+  }
 
   // size
   &.egg-button--medium {
@@ -89,7 +93,7 @@ export default {
   }
   &.is-hollow {
     background-color: $--color-white;
-    border-width: 2px;
+    border-width: 1px;
 
     &:hover {
       background-color: $--color-primary-light-9;
@@ -114,42 +118,140 @@ export default {
 
   // disabled
   &.disabled {
-    opacity: 0.5;
     cursor: not-allowed;
+    opacity: 0.5;
   }
 
   // semantic
   &.egg-button--success {
+    color: $--color-white;
     &.is-primary {
-      color: $--color-white;
-      background-color: $--color-primary;
-
-      &:hover {
-        background-color: $--color-primary-light-1;
-        border-color: $--color-primary-light-1;
-      }
-    }
-    &.is-hollow {
-      background-color: $--color-white;
-      border-width: 2px;
-
-      &:hover {
-        background-color: $--color-primary-light-9;
-      }
-    }
-    &.is-secondary {
-      background-color: $--color-primary-light-8;
-      border-color: transparent;
-    }
-    &.is-text {
-      background-color: unset;
-      border: none;
+      background-color: $--color-green;
+      border-color: $--color-green;
 
       &:hover {
         opacity: 0.8;
       }
     }
+    &.is-hollow {
+      color: $--color-green;
+      background-color: $--color-green-lightest;
+      border-color: $--color-green;
+
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-green;
+      }
+    }
+    &.is-secondary {
+      color: $--color-green;
+      background-color: $--color-green-lightest;
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-green-lighter;
+      }
+    }
+    &.is-text {
+      color: $--color-green;
+    }
   }
+  &.egg-button--warning {
+    color: $--color-white;
+    &.is-primary {
+      background-color: $--color-amber;
+      border-color: $--color-amber;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    &.is-hollow {
+      color: $--color-amber;
+      background-color: $--color-amber-lightest;
+      border-color: $--color-amber;
+
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-amber;
+      }
+    }
+    &.is-secondary {
+      color: $--color-amber;
+      background-color: $--color-amber-lightest;
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-amber-lighter;
+      }
+    }
+    &.is-text {
+      color: $--color-amber;
+    }
+  }
+  &.egg-button--danger {
+    color: $--color-white;
+    &.is-primary {
+      background-color: $--color-coral;
+      border-color: $--color-coral;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    &.is-hollow {
+      color: $--color-coral;
+      background-color: $--color-coral-lightest;
+      border-color: $--color-coral;
+
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-coral;
+      }
+    }
+    &.is-secondary {
+      color: $--color-coral;
+      background-color: $--color-coral-lightest;
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-coral-lighter;
+      }
+    }
+    &.is-text {
+      color: $--color-coral;
+    }
+  }
+  &.egg-button--info {
+    color: $--color-white;
+    &.is-primary {
+      background-color: $--color-grey;
+      border-color: $--color-grey;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    &.is-hollow {
+      color: $--color-grey;
+      background-color: $--color-grey-lightest;
+      border-color: $--color-grey;
+
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-grey;
+      }
+    }
+    &.is-secondary {
+      color: $--color-grey;
+      background-color: $--color-grey-lightest;
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-grey-lighter;
+      }
+    }
+    &.is-text {
+      color: $--color-grey;
+    }
+  }
+
   &.egg-button--small {
     padding: 4px 10px;
     font-size: 13px;
@@ -158,6 +260,5 @@ export default {
     padding: 2px 8px;
     font-size: 12px;
   }
-
 }
 </style>
