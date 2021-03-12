@@ -4,6 +4,12 @@ module.exports = () => {
   return {
     title: 'Hello Eggplore',
     description: 'UI',
+    themeConfig: {
+      sidebar: [
+        '/',
+        ['/button', 'Button 按钮'],
+      ]
+    },
     configureWebpack: {
       resolve: {
         alias: {

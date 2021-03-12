@@ -1,7 +1,7 @@
-import Button from '../packages/Button/index';
+import Button from '../packages/button/index';
 
 const install = function (Vue) {
-  Vue.components(Button.name, Button);
+  Vue.component(Button.name, Button);
 };
 
 if (typeof window !== 'undefined' && window.Vue) {

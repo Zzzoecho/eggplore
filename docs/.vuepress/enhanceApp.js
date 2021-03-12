@@ -1,6 +1,6 @@
 import "@packages/assets/styles/variables.scss";
 import Title from './Title';
-import Button from '@packages/Button/src/Button';
+import Button from '@packages/button/src/button';
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
