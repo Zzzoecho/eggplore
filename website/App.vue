@@ -2,28 +2,39 @@
   <div id="app">
     <div class="panel">
       <h4>LARGE BUTTONS</h4>
-      <ul class="button-list">
-        <li>
-          <egg-button type="primary">PRIMARY</egg-button>
-          <egg-button type="primary" disabled>PRIMARY</egg-button>
-        </li>
-        <li>
-          <egg-button type="secondary">secondary</egg-button>
-          <egg-button type="secondary" disabled>secondary</egg-button>
-        </li>
-        <li>
-          <egg-button>DEFAULT</egg-button>
-          <egg-button disabled>DEFAULT</egg-button>
-        </li>
-        <!--        <li>-->
-        <!--          <egg-button type="primary">PRIMARY</egg-button>-->
-        <!--          <egg-button type="primary" disabled>PRIMARY</egg-button>-->
-        <!--        </li>-->
-        <li>
-          <egg-button type="text">text</egg-button>
-          <egg-button type="text" disabled>text</egg-button>
-        </li>
-      </ul>
+      <div class="button-list">
+        <egg-row>
+          <egg-button>hollow</egg-button>
+          <egg-button semantic='success'>成功按钮</egg-button>
+          <egg-button semantic='warning'>警告按钮</egg-button>
+          <egg-button semantic='info'>信息按钮</egg-button>
+          <egg-button semantic='danger'>危险按钮</egg-button>
+        </egg-row>
+
+        <egg-row>
+          <egg-button type='primary'>primary</egg-button>
+          <egg-button type='primary' semantic='success'>成功按钮</egg-button>
+          <egg-button type='primary' semantic='warning'>警告按钮</egg-button>
+          <egg-button type='primary' semantic='info'>信息按钮</egg-button>
+          <egg-button type='primary' semantic='danger'>危险按钮</egg-button>
+        </egg-row>
+
+        <egg-row>
+          <egg-button type='secondary'>secondary</egg-button>
+          <egg-button type='secondary' semantic='success'>成功按钮</egg-button>
+          <egg-button type='secondary' semantic='warning'>警告按钮</egg-button>
+          <egg-button type='secondary' semantic='info'>信息按钮</egg-button>
+          <egg-button type='secondary' semantic='danger'>危险按钮</egg-button>
+        </egg-row>
+
+        <egg-row>
+          <egg-button type='text'>文字按钮</egg-button>
+          <egg-button type='text' semantic='success'>成功按钮</egg-button>
+          <egg-button type='text' semantic='warning'>警告按钮</egg-button>
+          <egg-button type='text' semantic='info'>信息按钮</egg-button>
+          <egg-button type='text' semantic='danger'>危险按钮</egg-button>
+        </egg-row>
+      </div>
     </div>
   </div>
 </template>
