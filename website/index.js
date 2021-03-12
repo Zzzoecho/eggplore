@@ -2,11 +2,14 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import App from './App.vue';
-import Button from '../packages/Button';
+import Eggplore from '../src/index';
+
+// import Button from '../packages/Button';
 
 Vue.use(VueRouter);
 
-Vue.component(Button.name, Button);
+Vue.use(Eggplore);
+// Vue.component(Button.name, Button);
 
 const route = new VueRouter({
   mode: 'hash',
