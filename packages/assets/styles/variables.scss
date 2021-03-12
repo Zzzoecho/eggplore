@@ -19,6 +19,10 @@ $--color-magenta-lighter: mix($--color-white, $--color-magenta, 40%) !default;
 $--color-magenta-lightest: mix($--color-white, $--color-magenta, 80%) !default;
 
 // ----- 语义化颜色 ----- //
+$--color-grey: #909399 !default;
+$--color-grey-lighter: mix($--color-white, $--color-grey, 40%) !default;
+$--color-grey-lightest: mix($--color-white, $--color-grey, 80%) !default;
+
 $--color-amber: #FFCF5C !default;
 $--color-amber-lighter: mix($--color-white, $--color-amber, 40%) !default;
 $--color-amber-lightest: mix($--color-white, $--color-amber, 80%) !default;

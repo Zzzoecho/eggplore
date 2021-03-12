@@ -3,8 +3,9 @@
     :class="[
       'egg-button',
       { disabled: disabled },
-      type ? `egg-button--${type}` : '',
+      type ? `is-${type}` : '',
       size ? `egg-button--${size}` : '',
+      semantic ? `egg-button--${semantic}` : '',
     ]"
   >
     <slot></slot>
@@ -45,40 +46,43 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/styles/variables.scss";
+@import '../../assets/styles/variables.scss';
 
 .egg-button {
   box-sizing: border-box;
   display: inline-block;
-  padding: 12px 70px;
-  font-family: Helvetica;
-  font-size: 17px;
+  flex: none;
+  padding: 8px 20px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 22px;
   color: $--color-primary;
   text-align: center;
   letter-spacing: 0.5px;
   cursor: pointer;
-  border: 1px solid #6979f8;
+  border: 2px solid #6979f8;
   border-radius: 6px;
   transition: all 200ms;
 
+  & + .egg-button {
+    margin-left: 10px;
+  }
+
   // size
   &.egg-button--medium {
-    padding: 10px 50px;
+    padding: 6px 15px;
     font-size: 14px;
   }
   &.egg-button--small {
-    padding: 5px 20px;
+    padding: 4px 10px;
     font-size: 13px;
   }
   &.egg-button--mini {
-    padding: 4px;
+    padding: 2px 8px;
     font-size: 12px;
   }
 
   // type
-  &.egg-button--primary {
+  &.is-primary {
     color: $--color-white;
     background-color: $--color-primary;
 
@@ -87,26 +91,174 @@ export default {
       border-color: $--color-primary-light-1;
     }
   }
-  &.egg-button--hollow {
+  &.is-hollow {
     background-color: $--color-white;
-    border-width: 2px;
+    border-width: 1px;
 
     &:hover {
       background-color: $--color-primary-light-9;
     }
   }
-  &.egg-button--secondary {
+  &.is-secondary {
     background-color: $--color-primary-light-8;
-    border: none;
+    border-color: transparent;
 
     &:hover {
       background-color: $--color-primary-light-7;
     }
   }
-  &.egg-button--text {
-    padding: 12px 0;
+  &.is-text {
     background-color: unset;
     border: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  // disabled
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  // semantic
+  &.egg-button--success {
+    color: $--color-white;
+    &.is-primary {
+      background-color: $--color-green;
+      border-color: $--color-green;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    &.is-hollow {
+      color: $--color-green;
+      background-color: $--color-green-lightest;
+      border-color: $--color-green;
+
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-green;
+      }
+    }
+    &.is-secondary {
+      color: $--color-green;
+      background-color: $--color-green-lightest;
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-green-lighter;
+      }
+    }
+    &.is-text {
+      color: $--color-green;
+    }
+  }
+  &.egg-button--warning {
+    color: $--color-white;
+    &.is-primary {
+      background-color: $--color-amber;
+      border-color: $--color-amber;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    &.is-hollow {
+      color: $--color-amber;
+      background-color: $--color-amber-lightest;
+      border-color: $--color-amber;
+
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-amber;
+      }
+    }
+    &.is-secondary {
+      color: $--color-amber;
+      background-color: $--color-amber-lightest;
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-amber-lighter;
+      }
+    }
+    &.is-text {
+      color: $--color-amber;
+    }
+  }
+  &.egg-button--danger {
+    color: $--color-white;
+    &.is-primary {
+      background-color: $--color-coral;
+      border-color: $--color-coral;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    &.is-hollow {
+      color: $--color-coral;
+      background-color: $--color-coral-lightest;
+      border-color: $--color-coral;
+
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-coral;
+      }
+    }
+    &.is-secondary {
+      color: $--color-coral;
+      background-color: $--color-coral-lightest;
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-coral-lighter;
+      }
+    }
+    &.is-text {
+      color: $--color-coral;
+    }
+  }
+  &.egg-button--info {
+    color: $--color-white;
+    &.is-primary {
+      background-color: $--color-grey;
+      border-color: $--color-grey;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    &.is-hollow {
+      color: $--color-grey;
+      background-color: $--color-grey-lightest;
+      border-color: $--color-grey;
+
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-grey;
+      }
+    }
+    &.is-secondary {
+      color: $--color-grey;
+      background-color: $--color-grey-lightest;
+      &:hover {
+        color: $--color-white;
+        background-color: $--color-grey-lighter;
+      }
+    }
+    &.is-text {
+      color: $--color-grey;
+    }
+  }
+
+  &.egg-button--small {
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+  &.egg-button--mini {
+    padding: 2px 8px;
+    font-size: 12px;
   }
 }
 </style>
