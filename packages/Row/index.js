@@ -1,8 +1,8 @@
-import Row from './src/Row.vue';
+import EggRow from './src/row.vue';
 
 // 插件写法 按需引入时用
-Row.install = function (Vue) {
-  Vue.component(Row.name, Row);
+EggRow.install = function (Vue) {
+  Vue.component(EggRow.name, EggRow);
 };
 
-export default Row;
+export default EggRow;
