@@ -20,6 +20,7 @@ module.exports = {
   resolve: {
     alias: {
       '@packages': path.resolve(__dirname, 'packages'),
+      '@views': path.resolve(__dirname, './website/views'),
     },
   },
   module: {
@@ -37,7 +38,8 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              additionalData: '@import "@packages/assets/styles/variables.scss";@import "@packages/assets/styles/reset.scss";',
+              additionalData:
+                '@import "@packages/assets/styles/variables.scss";@import "@packages/assets/styles/reset.scss";',
             },
           },
         ],
@@ -60,5 +62,9 @@ module.exports = {
     hot: true,
     port: 2333,
     contentBase: '../dist',
+  },
+  watchOptions: {
+    aggregateTimeout: 1500,
+    ignored: /node_modules/,
   },
 };
