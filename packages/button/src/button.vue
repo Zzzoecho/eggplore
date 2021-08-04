@@ -30,6 +30,7 @@ export default {
       default: 'hollow',
       validator: (val) => EggButtonType.includes(val),
     },
+    // 按钮状态
     semantic: {
       type: String,
       validator: (val) => EggButtonSemantic.includes(val),
@@ -250,15 +251,6 @@ export default {
     &.is-text {
       color: $--color-grey;
     }
-  }
-
-  &.egg-button--small {
-    padding: 4px 10px;
-    font-size: 13px;
-  }
-  &.egg-button--mini {
-    padding: 2px 8px;
-    font-size: 12px;
   }
 }
 </style>

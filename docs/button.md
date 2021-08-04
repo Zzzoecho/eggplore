@@ -36,10 +36,16 @@
 ```
 :::
 
+TODO：带 icon 的按钮
+TODO：loading 按钮
+
+
+
 ## Attributes
 
 | 参数     | 说明 | 类型   | 可选值                              | 默认值 |
 | :------- | :--: | :----- | :---------------------------------- | :----- |
-| size     | 尺寸 | string | primary / secondary / hollow / text | -      |
-| type     | 类型 | string | medium / small / mini               | -      |
+| type     | 类型 | string | primary / secondary / hollow / text | -      |
+| size     | 尺寸 | string | medium / small / mini               | -      |
 | semantic | 状态 | string | success / warning / info / danger   | -      |
+| disabled | 是否可用 | boolean | true / false   |  fales   |
