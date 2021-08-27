@@ -20,11 +20,25 @@ module.exports = {
   resolve: {
     alias: {
       '@packages': path.resolve(__dirname, 'packages'),
+      '@website': path.resolve(__dirname, './website'),
       '@views': path.resolve(__dirname, './website/views'),
     },
   },
   module: {
     rules: [
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: '[name].[hash:8].[ext]',
+              esModule: false,
+            },
+          },
+        ],
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
