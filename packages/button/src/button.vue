@@ -7,6 +7,7 @@
       size ? `egg-button--${size}` : '',
       semantic ? `egg-button--${semantic}` : '',
     ]"
+    @click="handleClick"
   >
     <slot></slot>
   </div>
@@ -14,7 +15,7 @@
 
 <script>
 const EggButtonType = ['primary', 'secondary', 'hollow', 'text'];
-const EggButtonSize = ['medium', 'small', 'mini'];
+const EggButtonSize = ['large', 'medium', 'small', 'mini'];
 const EggButtonSemantic = ['', 'success', 'warning', 'info', 'danger'];
 
 export default {
@@ -22,6 +23,7 @@ export default {
   props: {
     size: {
       type: String,
+      default: 'large',
       validator: (val) => EggButtonSize.includes(val),
     },
     // 不同层级的按钮
@@ -43,6 +45,12 @@ export default {
       type: String,
     },
   },
+  methods: {
+    handleClick() {
+      if (this.disabled) return;
+      this.$emit('click');
+    },
+  },
 };
 </script>
 
@@ -53,13 +61,12 @@ export default {
   box-sizing: border-box;
   display: inline-block;
   flex: none;
-  padding: 8px 20px;
-  font-size: 16px;
   font-weight: 400;
   color: $--color-primary;
   text-align: center;
   letter-spacing: 0.5px;
   cursor: pointer;
+  user-select: none;
   border: 2px solid #6979f8;
   border-radius: 6px;
   transition: all 200ms;
@@ -69,16 +76,20 @@ export default {
   }
 
   // size
+  &.egg-button--large {
+    padding: 13px 20px;
+    font-size: 16px;
+  }
   &.egg-button--medium {
-    padding: 6px 15px;
+    padding: 10px 16px;
     font-size: 14px;
   }
   &.egg-button--small {
-    padding: 4px 10px;
+    padding: 8px 10px;
     font-size: 13px;
   }
   &.egg-button--mini {
-    padding: 2px 8px;
+    padding: 4px 8px;
     font-size: 12px;
   }
 

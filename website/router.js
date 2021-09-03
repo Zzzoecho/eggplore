@@ -15,6 +15,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "CssFilter" */ '@views/Filter/Css.vue'),
   },
   {
+    path: '/filter/lut',
+    name: 'LutFilter',
+    component: () => import(/* webpackChunkName: "LutFilter" */ '@views/Filter/Lut.vue'),
+  },
+  {
     path: '/test',
     name: 'InputTest',
     component: () => import(/* webpackChunkName: "InputTest" */ '@views/InputTest.vue'),
