@@ -20,6 +20,7 @@ module.exports = {
   resolve: {
     alias: {
       '@packages': path.resolve(__dirname, 'packages'),
+      '@assets': path.resolve(__dirname, 'packages/assets'),
       '@views': path.resolve(__dirname, './website/views'),
     },
   },
@@ -38,11 +39,19 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              additionalData:
-                '@import "@packages/assets/styles/variables.scss";@import "@packages/assets/styles/reset.scss";',
+              additionalData: '@import "@packages/assets/styles/main.scss";',
             },
           },
         ],
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'fonts/',
+          },
+        },
       },
     ],
   },

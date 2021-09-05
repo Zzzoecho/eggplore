@@ -3,6 +3,8 @@
     <egg-input placeholder="Place" />
     <egg-input type="password" />
     <egg-input size="mini" />
+
+    <i class="iconfont egg-icon-arrow-left"></i>
   </div>
 </template>
 
