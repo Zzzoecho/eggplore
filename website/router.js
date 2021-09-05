@@ -10,6 +10,11 @@ const routes = [
     component: () => import('@views/Dashboard.vue'),
   },
   {
+    path: '/filter',
+    name: 'FilterPPT',
+    component: () => import('@views/Filter/PPT.vue'),
+  },
+  {
     path: '/filter/css',
     name: 'CssFilter',
     component: () => import(/* webpackChunkName: "CssFilter" */ '@views/Filter/Css.vue'),

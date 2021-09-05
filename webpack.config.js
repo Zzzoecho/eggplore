@@ -19,6 +19,7 @@ module.exports = {
   },
   resolve: {
     alias: {
+      '@': path.resolve(__dirname, 'src'),
       '@packages': path.resolve(__dirname, 'packages'),
       '@assets': path.resolve(__dirname, 'packages/assets'),
       '@website': path.resolve(__dirname, './website'),
@@ -28,7 +29,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|jpeg|gif)$/,
+        test: /\.(png|jpg|jpeg|gif|mp4)$/,
         use: [
           {
             loader: 'url-loader',

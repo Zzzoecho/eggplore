@@ -89,6 +89,7 @@
   "dependencies": {
     "cache-loader": "^4.1.0",
     "element-ui": "^2.15.1",
+    "reveal.js": "^4.1.3",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9"
   }
