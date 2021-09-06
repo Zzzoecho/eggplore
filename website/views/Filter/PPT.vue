@@ -21,9 +21,7 @@
 
       <section>
         <h2>LUT - Look Up Table</h2>
-        <p>
-          事先将颜色值存储在一张缓存表中, 当需要运算的时候直接从这张表中索引出对应的颜色值。维护了颜色的映射关系。
-        </p>
+        <p>事先将颜色值存储在一张缓存表中, 当需要运算的时候直接从这张表中索引出对应的颜色值。维护了颜色的映射关系。</p>
         <ul>
           <li>
             <p>1D LUT：三个分量互不影响。 f(x) = y。后缀为 .lut 的文件</p>
@@ -44,6 +42,35 @@
         <p>可以从 PS、3D LUT Creator、达芬奇等软件上导出。</p>
         <p>纯文本。常用 size：16、33、64</p>
         <img class="fragment gap" src="../../assets/luts/cube.png" />
+      </section>
+
+      <section>
+        <h2>计算</h2>
+        <p>采样 + 插值</p>
+        <ul>
+          <li>1. 将颜色分量转换到 [0, N - 1] 之间</li>
+          <li>2. 分别向上 & 向下取整</li>
+          <li>3. 同理得到映射后可能的 最大 和 最小 的颜色值</li>
+          <li>4. 根据小数部分的倾向， 计算出实际色值</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>优缺点及实现</h2>
+        <div class="advance">
+          <ul>
+            <h4>优点</h4>
+            <li>本质上是用空间换时间，将复杂的算法简化为一次 LUT 操作。</li>
+            <li>跨平台，市面上大多软件都支持。</li>
+            <li>速度快，效果稳定。</li>
+          </ul>
+          <ul>
+            <h4>缺点</h4>
+            <li>增加软件包的体积。</li>
+            <li>LUT资源容易被破解、泄密。</li>
+          </ul>
+          <p>ffmpeg</p>
+        </div>
       </section>
     </div>
   </div>
@@ -111,6 +138,24 @@ export default {
     img {
       width: 250px;
       height: fit-content;
+    }
+  }
+
+  .advance {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60vw;
+    margin: 20px auto;
+
+    ul {
+      margin-top: 20px;
+    }
+
+    h4 {
+      margin-bottom: 15px;
+      font-size: 26px;
+      font-weight: bold;
     }
   }
 }

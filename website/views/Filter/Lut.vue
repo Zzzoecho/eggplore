@@ -4,7 +4,6 @@
 
     <div class="operate">
       <input type="file" @change="fileChange" />
-      <egg-input />
       <egg-button :disabled="cube.length === 0" @click="getData">应用滤镜</egg-button>
     </div>
   </div>
@@ -115,14 +114,29 @@ export default {
   padding: 20px;
 
   #canvas {
-    width: 1100px;
+    width: 70vw;
   }
+
+  //input {
+  //  padding: 10px;
+  //  border: 1px solid $--color-border-base;
+  //  border-radius: 4px;
+  //  outline: none;
+  //}
 
   .operate {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 25vw;
     margin-left: 20px;
+
+    input {
+      margin-bottom: 20px;
+    }
+
+    .egg-button {
+      max-width: 200px;
+    }
   }
 }
 </style>
