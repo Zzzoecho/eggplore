@@ -1,7 +1,7 @@
 {
   "name": "egg-plore",
   "version": "0.0.1-beta",
-  "description": "eggplore UI",
+  "description": "A Component Library for Vue.js",
   "main": "lib/index.umd.js",
   "unpkg": "lib/index.min.js",
   "files": [
